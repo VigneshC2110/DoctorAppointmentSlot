@@ -15,10 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         if ($conn->query($sql) === TRUE) {
             $message = "Slot freed successfully.";
         } else {
-            $message = "Error freeing slot: " . $conn->error;
+            $message = "Error: " . $conn->error;
         }
     } else {
-        $message = "Unauthorized action.";
+        $message = "Error Query.";
     }
 }
 if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'doctor') {
