@@ -12,7 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM users WHERE username='$username'";
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+
     $result = $conn->query($sql);
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
@@ -42,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="form1">
         <h2>Login</h2>
         <?php if (!empty($message)): ?>
-            <p class="error-message"><?= htmlspecialchars($message) ?></p>
+            <p style="color:red" class="error-message"><?= htmlspecialchars($message) ?></p>
         <?php endif; ?>
         <form action="" method="POST">
             <div class="input1">

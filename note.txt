@@ -1,7 +1,10 @@
 DoctorName:Vignesh
-Password:2110
+Password:1234
 
 PaitentName:Madhan
-Password:2110
+Password:1234
+
+PaitentName:Akilesh
+Password:1234
 
 use this account for demo purposes
